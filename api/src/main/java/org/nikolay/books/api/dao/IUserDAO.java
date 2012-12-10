@@ -12,4 +12,6 @@ import org.nikolay.books.api.entity.User;
  */
 public interface IUserDAO extends IBaseDAO<User, Long> {
 
+	public User getUserByUsername(String username);
+
 }

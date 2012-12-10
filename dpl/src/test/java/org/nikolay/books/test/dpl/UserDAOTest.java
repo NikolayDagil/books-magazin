@@ -17,8 +17,8 @@ import org.nikolay.books.dpl.entity.UserEntity;
  */
 public class UserDAOTest {
 
-	private static final String TEST_A_STR = "Test A";
-	private static final String TEST_B_STR = "Test B";
+	private static final String TEST_A_STR = "admin";
+	private static final String TEST_B_STR = "Qwerty123";
 
 	private static final Boolean TEST_TRUE = true;
 	private static final Boolean TEST_FALSE = false;
@@ -61,7 +61,7 @@ public class UserDAOTest {
 
 	}
 
-	@Test
+/*	@Test
 	public void delete() {
 		int rowCount = 0;
 		List<User> users = null;
@@ -126,6 +126,6 @@ public class UserDAOTest {
 		User userFinal = userDAO.getId(user.getId());
 
 		Assert.assertEquals(userFinal.getFirstName(), TEST_B_STR);
-	}
+	}*/
 
 }
