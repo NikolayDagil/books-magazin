@@ -102,7 +102,8 @@ public class CustomerEntity implements Customer, Serializable {
 	}
 
 	/**
-	 * @param id the id to set
+	 * @param id
+	 *            the id to set
 	 */
 	public void setId(Long id) {
 		this.id = id;
@@ -116,7 +117,8 @@ public class CustomerEntity implements Customer, Serializable {
 	}
 
 	/**
-	 * @param user the user to set
+	 * @param user
+	 *            the user to set
 	 */
 	public void setUser(User user) {
 		this.user = user;
@@ -130,7 +132,8 @@ public class CustomerEntity implements Customer, Serializable {
 	}
 
 	/**
-	 * @param address the address to set
+	 * @param address
+	 *            the address to set
 	 */
 	public void setAddress(String address) {
 		this.address = address;
@@ -144,7 +147,8 @@ public class CustomerEntity implements Customer, Serializable {
 	}
 
 	/**
-	 * @param country the country to set
+	 * @param country
+	 *            the country to set
 	 */
 	public void setCountry(String country) {
 		this.country = country;
@@ -158,7 +162,8 @@ public class CustomerEntity implements Customer, Serializable {
 	}
 
 	/**
-	 * @param city the city to set
+	 * @param city
+	 *            the city to set
 	 */
 	public void setCity(String city) {
 		this.city = city;
@@ -172,7 +177,8 @@ public class CustomerEntity implements Customer, Serializable {
 	}
 
 	/**
-	 * @param postcode the postcode to set
+	 * @param postcode
+	 *            the postcode to set
 	 */
 	public void setPostcode(Integer postcode) {
 		this.postcode = postcode;
@@ -186,7 +192,8 @@ public class CustomerEntity implements Customer, Serializable {
 	}
 
 	/**
-	 * @param rating the rating to set
+	 * @param rating
+	 *            the rating to set
 	 */
 	public void setRating(Integer rating) {
 		this.rating = rating;
@@ -200,7 +207,8 @@ public class CustomerEntity implements Customer, Serializable {
 	}
 
 	/**
-	 * @param balance the balance to set
+	 * @param balance
+	 *            the balance to set
 	 */
 	public void setBalance(Integer balance) {
 		this.balance = balance;
@@ -214,7 +222,8 @@ public class CustomerEntity implements Customer, Serializable {
 	}
 
 	/**
-	 * @param discounts the discounts to set
+	 * @param discounts
+	 *            the discounts to set
 	 */
 	public void setDiscounts(Integer discounts) {
 		this.discounts = discounts;
@@ -228,17 +237,11 @@ public class CustomerEntity implements Customer, Serializable {
 	}
 
 	/**
-	 * @param operations the operations to set
+	 * @param operations
+	 *            the operations to set
 	 */
 	public void setOperations(List<Operation> operations) {
 		this.operations = operations;
-	}
-
-	/**
-	 * @return the serialversionuid
-	 */
-	public static long getSerialversionuid() {
-		return serialVersionUID;
 	}
 
 }

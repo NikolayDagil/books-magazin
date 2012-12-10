@@ -22,9 +22,6 @@ import org.nikolay.books.api.entity.User;
 @Table(name = "user")
 public class UserEntity implements User, Serializable {
 
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 1L;
 
 	@Id
@@ -41,7 +38,7 @@ public class UserEntity implements User, Serializable {
 	@Column(name = "username", nullable = false)
 	private String username;
 
-	@Column(name = "email", nullable = true)
+	@Column(name = "email", nullable = false)
 	private String email;
 
 	@Column(name = "mobile", nullable = true)
@@ -50,8 +47,8 @@ public class UserEntity implements User, Serializable {
 	@Column(name = "isActive", nullable = false)
 	private Boolean isActive;
 
-	@Column(name = "password", nullable = true)
-	private Long password;
+	@Column(name = "password", nullable = false)
+	private String password;
 
 	@Column(name = "createDate", nullable = true)
 	private Date createDate;
@@ -75,7 +72,7 @@ public class UserEntity implements User, Serializable {
 	 */
 	public UserEntity(Long id, String firstName, String lastName,
 			String username, String email, Long mobile, Boolean isActive,
-			Long password, Date createDate) {
+			String password, Date createDate) {
 		this.id = id;
 		this.firstName = firstName;
 		this.lastName = lastName;
@@ -195,7 +192,7 @@ public class UserEntity implements User, Serializable {
 	/**
 	 * @return the password
 	 */
-	public Long getPassword() {
+	public String getPassword() {
 		return password;
 	}
 
@@ -203,7 +200,7 @@ public class UserEntity implements User, Serializable {
 	 * @param password
 	 *            the password to set
 	 */
-	public void setPassword(Long password) {
+	public void setPassword(String password) {
 		this.password = password;
 	}
 
@@ -222,11 +219,17 @@ public class UserEntity implements User, Serializable {
 		this.createDate = createDate;
 	}
 
-	/**
-	 * @return the serialversionuid
-	 */
-	public static long getSerialversionuid() {
-		return serialVersionUID;
+	@Override
+	public String toString() {
+		return "UserEntity [" + (id != null ? "id=" + id + ", " : "")
+				+ (firstName != null ? "firstName=" + firstName + ", " : "")
+				+ (lastName != null ? "lastName=" + lastName + ", " : "")
+				+ (username != null ? "username=" + username + ", " : "")
+				+ (email != null ? "email=" + email + ", " : "")
+				+ (mobile != null ? "mobile=" + mobile + ", " : "")
+				+ (isActive != null ? "isActive=" + isActive + ", " : "")
+				+ (password != null ? "password=" + password + ", " : "")
+				+ (createDate != null ? "createDate=" + createDate : "") + "]";
 	}
 
 }

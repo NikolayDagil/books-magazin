@@ -22,9 +22,6 @@ import org.nikolay.books.api.entity.Book;
 @Table(name = "book")
 public class BookEntity implements Book, Serializable {
 
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 1L;
 
 	@Id
@@ -95,7 +92,8 @@ public class BookEntity implements Book, Serializable {
 	}
 
 	/**
-	 * @param id the id to set
+	 * @param id
+	 *            the id to set
 	 */
 	public void setId(Long id) {
 		this.id = id;
@@ -109,7 +107,8 @@ public class BookEntity implements Book, Serializable {
 	}
 
 	/**
-	 * @param title the title to set
+	 * @param title
+	 *            the title to set
 	 */
 	public void setTitle(String title) {
 		this.title = title;
@@ -123,7 +122,8 @@ public class BookEntity implements Book, Serializable {
 	}
 
 	/**
-	 * @param author the author to set
+	 * @param author
+	 *            the author to set
 	 */
 	public void setAuthor(String author) {
 		this.author = author;
@@ -137,7 +137,8 @@ public class BookEntity implements Book, Serializable {
 	}
 
 	/**
-	 * @param numberPage the numberPage to set
+	 * @param numberPage
+	 *            the numberPage to set
 	 */
 	public void setNumberPage(Integer numberPage) {
 		this.numberPage = numberPage;
@@ -151,7 +152,8 @@ public class BookEntity implements Book, Serializable {
 	}
 
 	/**
-	 * @param imprintDate the imprintDate to set
+	 * @param imprintDate
+	 *            the imprintDate to set
 	 */
 	public void setImprintDate(Date imprintDate) {
 		this.imprintDate = imprintDate;
@@ -165,7 +167,8 @@ public class BookEntity implements Book, Serializable {
 	}
 
 	/**
-	 * @param price the price to set
+	 * @param price
+	 *            the price to set
 	 */
 	public void setPrice(Integer price) {
 		this.price = price;
@@ -179,7 +182,8 @@ public class BookEntity implements Book, Serializable {
 	}
 
 	/**
-	 * @param rating the rating to set
+	 * @param rating
+	 *            the rating to set
 	 */
 	public void setRating(Integer rating) {
 		this.rating = rating;
@@ -193,7 +197,8 @@ public class BookEntity implements Book, Serializable {
 	}
 
 	/**
-	 * @param discounts the discounts to set
+	 * @param discounts
+	 *            the discounts to set
 	 */
 	public void setDiscounts(Integer discounts) {
 		this.discounts = discounts;
@@ -207,19 +212,11 @@ public class BookEntity implements Book, Serializable {
 	}
 
 	/**
-	 * @param status the status to set
+	 * @param status
+	 *            the status to set
 	 */
 	public void setStatus(Boolean status) {
 		this.status = status;
 	}
-
-	/**
-	 * @return the serialversionuid
-	 */
-	public static long getSerialversionuid() {
-		return serialVersionUID;
-	}
-
-	
 
 }

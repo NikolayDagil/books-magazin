@@ -10,7 +10,7 @@ import org.nikolay.books.dpl.entity.AdminEntity;
 
 /**
  * @author Nikolay Dagil
- * 
+ * @version 1.0
  */
 public class AdminDAO extends BaseDAO<Admin, AdminEntity, Long> implements
 		IAdminDAO {
