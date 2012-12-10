@@ -5,13 +5,15 @@
 		<groupId>org.nikolay</groupId>
 		<artifactId>base</artifactId>
 		<version>0.0.1-SNAPSHOT</version>
-		<relativePath>../base</relativePath>
+		<relativePath>../base/pom.xml</relativePath>
 	</parent>
 	<artifactId>web</artifactId>
 	<packaging>war</packaging>
+
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 	</properties>
+
 	<dependencies>
 		<dependency>
 			<groupId>${project.groupId}</groupId>
@@ -30,6 +32,7 @@
 			<version>1.2</version>
 		</dependency>
 	</dependencies>
+
 	<build>
 		<plugins>
 			<plugin>

@@ -10,7 +10,7 @@ import org.nikolay.books.dpl.entity.SaleEntity;
 
 /**
  * @author Nikolay Dagil
- * 
+ * @version 1.0
  */
 public class SaleDAO extends BaseDAO<Sale, SaleEntity, Long> implements
 		ISaleDAO {

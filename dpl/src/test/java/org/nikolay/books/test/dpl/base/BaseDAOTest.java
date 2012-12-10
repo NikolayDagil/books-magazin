@@ -1,7 +1,7 @@
 /**
  * 
  */
-package org.nikolay.books.test.base;
+package org.nikolay.books.test.dpl.base;
 
 import java.io.Serializable;
 

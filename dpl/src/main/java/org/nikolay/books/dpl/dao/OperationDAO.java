@@ -10,7 +10,7 @@ import org.nikolay.books.dpl.entity.OperationEntity;
 
 /**
  * @author Nikolay Dagil
- * 
+ * @version 1.0
  */
 public class OperationDAO extends BaseDAO<Operation, OperationEntity, Long>
 		implements IOperationDAO {

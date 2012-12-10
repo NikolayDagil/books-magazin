@@ -10,7 +10,7 @@ import org.nikolay.books.dpl.entity.CustomerEntity;
 
 /**
  * @author Nikolay Dagil
- * 
+ * @version 1.0
  */
 public class CustomerDAO extends BaseDAO<Customer, CustomerEntity, Long>
 		implements ICustomerDAO {

@@ -15,7 +15,7 @@ import org.nikolay.books.dpl.entity.UserEntity;
 
 /**
  * @author Nikolay Dagil
- * 
+ * @version 1.0
  */
 public class UserDAO extends BaseDAO<User, UserEntity, Long> implements
 		IUserDAO {
@@ -25,8 +25,8 @@ public class UserDAO extends BaseDAO<User, UserEntity, Long> implements
 	}
 
 	@Override
-	public User getUserByUsername(String username) {
-		User user = new UserEntity();
+	public User getAuthentication(String username, String password) {
+		User user = null;
 
 		Session session = HibernateUtil.getSessionFactory().openSession();
 		Transaction transaction = null;
@@ -35,8 +35,10 @@ public class UserDAO extends BaseDAO<User, UserEntity, Long> implements
 			transaction = session.beginTransaction();
 
 			Query query = session
-					.createQuery("from UserEntity u where u.username = :username");
+					.createQuery("from UserEntity user where user.username = :username and user.password = :password");
 			query.setParameter("username", username);
+			query.setParameter("password", password);
+
 			user = (User) query.list().get(0);
 
 			transaction.commit();

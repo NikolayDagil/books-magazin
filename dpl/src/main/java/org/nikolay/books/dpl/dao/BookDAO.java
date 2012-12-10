@@ -10,7 +10,7 @@ import org.nikolay.books.dpl.entity.BookEntity;
 
 /**
  * @author Nikolay Dagil
- * 
+ * @version 1.0
  */
 public class BookDAO extends BaseDAO<Book, BookEntity, Long> implements
 		IBookDAO {

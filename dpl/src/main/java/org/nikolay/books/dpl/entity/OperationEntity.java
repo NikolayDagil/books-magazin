@@ -26,9 +26,6 @@ import org.nikolay.books.api.entity.Operation;
 @Table(name = "transaction")
 public class OperationEntity implements Operation, Serializable {
 
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 1L;
 
 	@Id
@@ -69,7 +66,8 @@ public class OperationEntity implements Operation, Serializable {
 	}
 
 	/**
-	 * @param id the id to set
+	 * @param id
+	 *            the id to set
 	 */
 	public void setId(Long id) {
 		this.id = id;
@@ -83,7 +81,8 @@ public class OperationEntity implements Operation, Serializable {
 	}
 
 	/**
-	 * @param customer the customer to set
+	 * @param customer
+	 *            the customer to set
 	 */
 	public void setCustomer(Customer customer) {
 		this.customer = customer;
@@ -97,17 +96,11 @@ public class OperationEntity implements Operation, Serializable {
 	}
 
 	/**
-	 * @param book the book to set
+	 * @param book
+	 *            the book to set
 	 */
 	public void setBook(Book book) {
 		this.book = book;
-	}
-
-	/**
-	 * @return the serialversionuid
-	 */
-	public static long getSerialversionuid() {
-		return serialVersionUID;
 	}
 
 }

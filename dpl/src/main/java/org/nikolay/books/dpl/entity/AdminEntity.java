@@ -18,15 +18,12 @@ import org.nikolay.books.api.entity.User;
 
 /**
  * @author Nikolay Dagil
- * 
+ * @version 1.0
  */
 @Entity
 @Table(name = "admin")
 public class AdminEntity implements Admin, Serializable {
 
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 1L;
 
 	@Id
@@ -100,13 +97,6 @@ public class AdminEntity implements Admin, Serializable {
 	 */
 	public void setRole(String role) {
 		this.role = role;
-	}
-
-	/**
-	 * @return the serialversionuid
-	 */
-	public static long getSerialversionuid() {
-		return serialVersionUID;
 	}
 
 }

@@ -24,9 +24,6 @@ import org.nikolay.books.api.entity.User;
 @Table(name = "sale")
 public class SaleEntity implements Sale, Serializable {
 
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 1L;
 
 	@Id
@@ -181,13 +178,6 @@ public class SaleEntity implements Sale, Serializable {
 	 */
 	public void setRole(String role) {
 		this.role = role;
-	}
-
-	/**
-	 * @return the serialversionuid
-	 */
-	public static long getSerialversionuid() {
-		return serialVersionUID;
 	}
 
 }
