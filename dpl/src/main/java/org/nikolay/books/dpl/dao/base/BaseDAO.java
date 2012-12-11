@@ -14,7 +14,7 @@ import org.nikolay.books.dpl.dao.util.HibernateUtil;
 
 /**
  * @author Nikolay Dagil
- * 
+ * @version 1.0
  */
 public abstract class BaseDAO<I, T extends I, PK extends Serializable> {
 

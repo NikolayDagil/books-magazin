@@ -21,4 +21,5 @@ public interface IBaseDAO<I, PK extends Serializable> {
 	public I getId(Long PK);
 
 	public List<I> list();
+
 }

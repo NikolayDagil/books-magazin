@@ -91,13 +91,13 @@ public interface User {
 	/**
 	 * @return the password
 	 */
-	public Long getPassword();
+	public String getPassword();
 
 	/**
 	 * @param password
 	 *            the password to set
 	 */
-	public void setPassword(Long password);
+	public void setPassword(String password);
 
 	/**
 	 * @return the createDate
