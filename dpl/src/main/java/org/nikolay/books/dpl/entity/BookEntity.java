@@ -23,16 +23,17 @@ import org.nikolay.books.api.entity.Book;
 public class BookEntity implements Book, Serializable {
 
 	private static final long serialVersionUID = 1L;
+	
 
 	@Id
 	@GeneratedValue
 	@Column(name = "id", unique = true, nullable = false)
 	private Long id;
 
-	@Column(name = "title", nullable = true)
+	@Column(name = "title", nullable = false)
 	private String title;
 
-	@Column(name = "author", nullable = true)
+	@Column(name = "author", nullable = false)
 	private String author;
 
 	@Column(name = "numberPage", nullable = true)
@@ -218,5 +219,23 @@ public class BookEntity implements Book, Serializable {
 	public void setStatus(Boolean status) {
 		this.status = status;
 	}
+
+	/* (non-Javadoc)
+	 * @see java.lang.Object#toString()
+	 */
+	@Override
+	public String toString() {
+		return "BookEntity ["
+				+ (id != null ? "id=" + id + ", " : "")
+				+ (title != null ? "title=" + title + ", " : "")
+				+ (author != null ? "author=" + author + ", " : "")
+				+ (numberPage != null ? "numberPage=" + numberPage + ", " : "")
+				+ (imprintDate != null ? "imprintDate=" + imprintDate + ", "
+						: "") + (price != null ? "price=" + price + ", " : "")
+				+ (rating != null ? "rating=" + rating + ", " : "")
+				+ (discounts != null ? "discounts=" + discounts + ", " : "")
+				+ (status != null ? "status=" + status : "") + "]";
+	}
+	
 
 }

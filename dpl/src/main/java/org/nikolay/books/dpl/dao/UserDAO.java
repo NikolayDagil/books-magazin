@@ -3,6 +3,9 @@
  */
 package org.nikolay.books.dpl.dao;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.hibernate.HibernateException;
 import org.hibernate.Query;
 import org.hibernate.Session;
@@ -39,7 +42,12 @@ public class UserDAO extends BaseDAO<User, UserEntity, Long> implements
 			query.setParameter("username", username);
 			query.setParameter("password", password);
 
-			user = (User) query.list().get(0);
+			List<User> users = new ArrayList<>();
+			users = query.list();
+
+			if (!users.isEmpty()) {
+				user = users.get(0);
+			}
 
 			transaction.commit();
 		} catch (HibernateException e) {
