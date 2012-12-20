@@ -60,4 +60,68 @@ public class UserDAO extends BaseDAO<User, UserEntity, Long> implements
 		return user;
 	}
 
+	@Override
+	public Boolean isExistsByUsername(String username) {
+		Boolean result = true;
+
+		Session session = HibernateUtil.getSessionFactory().openSession();
+		Transaction transaction = null;
+
+		try {
+			transaction = session.beginTransaction();
+
+			Query query = session
+					.createQuery("from UserEntity user where user.username = :username");
+			query.setParameter("username", username);
+
+			List<User> users = new ArrayList<>();
+			users = query.list();
+
+			if (users.isEmpty()) {
+				result = false;
+			}
+
+			transaction.commit();
+		} catch (HibernateException e) {
+			transaction.rollback();
+			e.printStackTrace();
+		} finally {
+			session.close();
+		}
+
+		return result;
+	}
+
+	@Override
+	public Boolean isExistsByEmail(String email) {
+		Boolean result = true;
+
+		Session session = HibernateUtil.getSessionFactory().openSession();
+		Transaction transaction = null;
+
+		try {
+			transaction = session.beginTransaction();
+
+			Query query = session
+					.createQuery("from UserEntity user where user.email = :email");
+			query.setParameter("email", email);
+
+			List<User> users = new ArrayList<>();
+			users = query.list();
+
+			if (users.isEmpty()) {
+				result = false;
+			}
+
+			transaction.commit();
+		} catch (HibernateException e) {
+			transaction.rollback();
+			e.printStackTrace();
+		} finally {
+			session.close();
+		}
+
+		return result;
+	}
+
 }

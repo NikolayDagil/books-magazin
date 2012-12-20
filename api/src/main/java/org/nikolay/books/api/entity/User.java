@@ -69,13 +69,13 @@ public interface User {
 	/**
 	 * @return the mobile
 	 */
-	public Long getMobile();
+	public String getMobile();
 
 	/**
 	 * @param mobile
 	 *            the mobile to set
 	 */
-	public void setMobile(Long mobile);
+	public void setMobile(String mobile);
 
 	/**
 	 * @return the isActive

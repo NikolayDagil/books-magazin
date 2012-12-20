@@ -14,4 +14,8 @@ public interface IUserDAO extends IBaseDAO<User, Long> {
 
 	public User getAuthentication(String username, String password);
 
+	public Boolean isExistsByUsername(String login);
+
+	public Boolean isExistsByEmail(String email);
+
 }

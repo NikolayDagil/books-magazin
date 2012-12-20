@@ -37,7 +37,7 @@ public class CustomerEntity implements Customer, Serializable {
 	@OneToOne(targetEntity = UserEntity.class, cascade = CascadeType.ALL)
 	private User user;
 
-	@Column(name = "address", nullable = true)
+	@Column(name = "address", nullable = false)
 	private String address;
 
 	@Column(name = "country", nullable = true)
@@ -244,4 +244,41 @@ public class CustomerEntity implements Customer, Serializable {
 		this.operations = operations;
 	}
 
+	@Override
+	public String toString() {
+		return "CustomerEntity ["
+				+ (id != null ? "id=" + id + ", " : "")
+				+ (user != null ? "user=" + user + ", " : "")
+				+ (address != null ? "address=" + address + ", " : "")
+				+ (country != null ? "country=" + country + ", " : "")
+				+ (city != null ? "city=" + city + ", " : "")
+				+ (postcode != null ? "postcode=" + postcode + ", " : "")
+				+ (rating != null ? "rating=" + rating + ", " : "")
+				+ (balance != null ? "balance=" + balance + ", " : "")
+				+ (discounts != null ? "discounts=" + discounts + ", " : "")
+				+ (operations != null ? "operations=" + operations + ", " : "")
+				+ (getId() != null ? "getId()=" + getId() + ", " : "")
+				+ (getUser() != null ? "getUser()=" + getUser() + ", " : "")
+				+ (getAddress() != null ? "getAddress()=" + getAddress() + ", "
+						: "")
+				+ (getCountry() != null ? "getCountry()=" + getCountry() + ", "
+						: "")
+				+ (getCity() != null ? "getCity()=" + getCity() + ", " : "")
+				+ (getPostcode() != null ? "getPostcode()=" + getPostcode()
+						+ ", " : "")
+				+ (getRating() != null ? "getRating()=" + getRating() + ", "
+						: "")
+				+ (getBalance() != null ? "getBalance()=" + getBalance() + ", "
+						: "")
+				+ (getDiscounts() != null ? "getDiscounts()=" + getDiscounts()
+						+ ", " : "")
+				+ (getOperations() != null ? "getOperations()="
+						+ getOperations() + ", " : "")
+				+ (getClass() != null ? "getClass()=" + getClass() + ", " : "")
+				+ "hashCode()="
+				+ hashCode()
+				+ ", "
+				+ (super.toString() != null ? "toString()=" + super.toString()
+						: "") + "]";
+	}
 }

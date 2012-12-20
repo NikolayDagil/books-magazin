@@ -42,7 +42,7 @@ public class UserEntity implements User, Serializable {
 	private String email;
 
 	@Column(name = "mobile", nullable = true)
-	private Long mobile;
+	private String mobile;
 
 	@Column(name = "isActive", nullable = false)
 	private Boolean isActive;
@@ -71,7 +71,7 @@ public class UserEntity implements User, Serializable {
 	 * @param createDate
 	 */
 	public UserEntity(Long id, String firstName, String lastName,
-			String username, String email, Long mobile, Boolean isActive,
+			String username, String email, String mobile, Boolean isActive,
 			String password, Date createDate) {
 		this.id = id;
 		this.firstName = firstName;
@@ -162,7 +162,7 @@ public class UserEntity implements User, Serializable {
 	/**
 	 * @return the mobile
 	 */
-	public Long getMobile() {
+	public String getMobile() {
 		return mobile;
 	}
 
@@ -170,7 +170,7 @@ public class UserEntity implements User, Serializable {
 	 * @param mobile
 	 *            the mobile to set
 	 */
-	public void setMobile(Long mobile) {
+	public void setMobile(String mobile) {
 		this.mobile = mobile;
 	}
 

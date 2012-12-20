@@ -56,7 +56,7 @@ public class AuthenticationServlet extends HttpServlet {
 			user = userDAO.getAuthentication(username, password);
 
 			if (user != null) {
-				RequestDispatcher requestDispatcher = request
+				RequestDispatcher requestDispatcher = request																															
 						.getRequestDispatcher(HOME_PAGE);
 				requestDispatcher.forward(request, response);
 			} else {

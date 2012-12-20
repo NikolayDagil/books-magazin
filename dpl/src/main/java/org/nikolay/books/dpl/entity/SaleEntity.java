@@ -34,7 +34,7 @@ public class SaleEntity implements Sale, Serializable {
 	@OneToOne(targetEntity = UserEntity.class, cascade = CascadeType.ALL)
 	private User user;
 
-	@Column(name = "address", nullable = true)
+	@Column(name = "address", nullable = false)
 	private String address;
 
 	@Column(name = "country", nullable = true)
