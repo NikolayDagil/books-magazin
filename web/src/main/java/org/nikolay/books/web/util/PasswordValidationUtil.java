@@ -10,16 +10,15 @@ import java.util.regex.Pattern;
  * @author Nikolay Dagil
  * 
  */
-public class EmailValidationUtil {
-
-	public boolean isNormalEmail(String email) {
+public class PasswordValidationUtil {
+	public boolean isNormalPassword(String password) {
 		Pattern pat;
 		Matcher mat;
 		boolean found;
 
-		pat = Pattern.compile("^[_A-Za-z0-9-\\+]+(\\.[_A-Za-z0-9-]+)*@"
-				+ "[A-Za-z0-9-]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$");
-		mat = pat.matcher(email);
+		pat = Pattern
+				.compile("((?=.*\\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%]).{6,20})");
+		mat = pat.matcher(password);
 		found = mat.matches();
 		if (found) {
 			found = true;

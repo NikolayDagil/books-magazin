@@ -21,6 +21,8 @@ import org.nikolay.books.dpl.dao.AdminDAO;
 import org.nikolay.books.dpl.dao.UserDAO;
 import org.nikolay.books.dpl.entity.AdminEntity;
 import org.nikolay.books.dpl.entity.UserEntity;
+import org.nikolay.books.web.util.EmailValidationUtil;
+import org.nikolay.books.web.util.PasswordValidationUtil;
 
 /**
  * @author Nikolay Dagil
@@ -65,9 +67,13 @@ public class AdminRegistrationServlet extends HttpServlet {
 				&& !firstName.isEmpty() && !lastName.isEmpty()) {
 
 			IUserDAO userDAO = new UserDAO();
+			EmailValidationUtil emailValidation = new EmailValidationUtil();
+			PasswordValidationUtil passwordValidation = new PasswordValidationUtil();
 
 			if (!userDAO.isExistsByEmail(email)
-					&& !userDAO.isExistsByUsername(username)) {
+					&& !userDAO.isExistsByUsername(username)
+					&& emailValidation.isNormalEmail(email)
+					&& passwordValidation.isNormalPassword(password)) {
 
 				User user = new UserEntity();
 				user.setPassword(password);
@@ -85,7 +91,6 @@ public class AdminRegistrationServlet extends HttpServlet {
 				Admin admin = new AdminEntity();
 				admin.setUser(user);
 				admin.setRole(role);
-				
 
 				System.out.println("****************");
 				adminDAO.save(admin);

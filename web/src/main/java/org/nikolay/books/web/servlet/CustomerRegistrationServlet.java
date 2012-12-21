@@ -22,6 +22,7 @@ import org.nikolay.books.dpl.dao.UserDAO;
 import org.nikolay.books.dpl.entity.CustomerEntity;
 import org.nikolay.books.dpl.entity.UserEntity;
 import org.nikolay.books.web.util.EmailValidationUtil;
+import org.nikolay.books.web.util.PasswordValidationUtil;
 
 /**
  * @author Nikolay Dagil
@@ -72,10 +73,12 @@ public class CustomerRegistrationServlet extends HttpServlet {
 			IUserDAO userDAO = new UserDAO();
 
 			EmailValidationUtil emailValidation = new EmailValidationUtil();
+			PasswordValidationUtil passwordValidation = new PasswordValidationUtil();
 
 			if (!userDAO.isExistsByEmail(email)
 					&& !userDAO.isExistsByUsername(username)
-					&& emailValidation.isNormalEmail(email)) {
+					&& emailValidation.isNormalEmail(email)
+					&& passwordValidation.isNormalPassword(password)) {
 
 				User user = new UserEntity();
 				user.setPassword(password);
@@ -87,8 +90,6 @@ public class CustomerRegistrationServlet extends HttpServlet {
 				user.setIsActive(true);
 				user.setCreateDate(new Date());
 
-				// userDAO.save(user);
-
 				ICustomerDAO customerDAO = new CustomerDAO();
 				Customer customer = new CustomerEntity();
 				customer.setAddress(address);
@@ -97,8 +98,9 @@ public class CustomerRegistrationServlet extends HttpServlet {
 				customer.setCountry(country);
 				customer.setPostcode(Integer.parseInt(postcode));
 
-				System.out.println("****************");
+				System.out.println("--------------------------------->");
 				customerDAO.save(customer);
+				System.out.println("<--------------------------------");
 
 				RequestDispatcher requestDispatcher = request
 						.getRequestDispatcher(SUCCESS_PAGE);

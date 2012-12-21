@@ -21,6 +21,8 @@ import org.nikolay.books.dpl.dao.SaleDAO;
 import org.nikolay.books.dpl.dao.UserDAO;
 import org.nikolay.books.dpl.entity.SaleEntity;
 import org.nikolay.books.dpl.entity.UserEntity;
+import org.nikolay.books.web.util.EmailValidationUtil;
+import org.nikolay.books.web.util.PasswordValidationUtil;
 
 /**
  * @author Nikolay Dagil
@@ -70,9 +72,13 @@ public class SaleRegistrationServlet extends HttpServlet {
 				&& !address.isEmpty()) {
 
 			IUserDAO userDAO = new UserDAO();
+			EmailValidationUtil emailValidation = new EmailValidationUtil();
+			PasswordValidationUtil passwordValidation = new PasswordValidationUtil();
 
 			if (!userDAO.isExistsByEmail(email)
-					&& !userDAO.isExistsByUsername(username)) {
+					&& !userDAO.isExistsByUsername(username)
+					&& !emailValidation.isNormalEmail(email)
+					&& passwordValidation.isNormalPassword(password)) {
 
 				User user = new UserEntity();
 				user.setPassword(password);
@@ -83,8 +89,6 @@ public class SaleRegistrationServlet extends HttpServlet {
 				user.setMobile(mobile);
 				user.setIsActive(true);
 				user.setCreateDate(new Date());
-
-				// userDAO.save(user);
 
 				ISaleDAO saleDAO = new SaleDAO();
 				Sale sale = new SaleEntity();
